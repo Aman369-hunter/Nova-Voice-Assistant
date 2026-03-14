@@ -7,17 +7,13 @@ import os
 from gtts import gTTS
 from openai import OpenAI
 
-# -----------------------------
 # API KEYS
-# -----------------------------
 
 NEWS_API_KEY = "your_api_key_here"
 OPENAI_API_KEY = "your_api_key_here"
 client = OpenAI(api_key=OPENAI_API_KEY)
 
-# -----------------------------
 # MUSIC LIBRARY
-# -----------------------------
 
 musicLibrary = {
     "believer": "https://www.youtube.com/watch?v=7wtfhZwyrcc",
@@ -26,9 +22,7 @@ musicLibrary = {
     "balenci" : "https://www.youtube.com/watch?v=siw7-MTgE4s&list=RDsiw7-MTgE4s&start_radio=1"
 }
 
-# -----------------------------
 # TEXT TO SPEECH
-# -----------------------------
 
 engine = pyttsx3.init()
 
@@ -38,9 +32,7 @@ def speak(text):
     engine.runAndWait()
 
 
-# -----------------------------
 # SPEECH RECOGNITION
-# -----------------------------
 
 recognizer = sr.Recognizer()
 
@@ -60,9 +52,7 @@ def listen():
         except sr.UnknownValueError:
             return ""
 
-# -----------------------------
 # OPENAI RESPONSE
-# -----------------------------
 
 def ask_ai(question):
     try:
@@ -81,9 +71,7 @@ def ask_ai(question):
     except Exception as e:
         return "Sorry! AI assistant is not available right now"
 
-# -----------------------------
 # GET NEWS
-# -----------------------------
 
 def get_news():
 
@@ -100,9 +88,7 @@ def get_news():
         speak(f"News {i+1}")
         speak(article["title"])
 
-# -----------------------------
-# COMMAND PROCESSOR
-# -----------------------------
+# COMMAND PROCESSing
 
 def process_command(command):
 
@@ -147,13 +133,11 @@ def process_command(command):
 
         speak(reply)
 
-# -----------------------------
 # MAIN PROGRAM
-# -----------------------------
 
 def main():
 
-    speak("Initializing nova")
+    speak("Initializing nova ......")
 
     while True:
 
@@ -169,9 +153,8 @@ def main():
 
             process_command(command)
 
-# -----------------------------
 # RUN PROGRAM
-# -----------------------------
 
 if __name__ == "__main__":
+# main function calling
     main()
