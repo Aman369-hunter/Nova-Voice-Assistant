@@ -2,9 +2,7 @@ import speech_recognition as sr
 import webbrowser
 import pyttsx3
 import requests
-import pygame
-import os
-from gtts import gTTS
+from gtts import gTTS #if you want to use googles text to speech
 from openai import OpenAI
 
 # API KEYS
@@ -60,7 +58,7 @@ def ask_ai(question):
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role":"system","content":"You are nova, a helpful AI assistant."},
+                {"role":"system","content":"You are nova, a helpful AI assistant, and give 2 line short a answer"},
                 {"role":"user","content":question}
             ]
         )
