@@ -7,8 +7,8 @@ from openai import OpenAI
 
 # API KEYS
 
-NEWS_API_KEY = "your_api_key_here"
-OPENAI_API_KEY = "your_api_key_here"
+NEWS_API_KEY = "your_news_api_key_here"
+OPENAI_API_KEY = "your_openai_api_key_here"
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # MUSIC LIBRARY
